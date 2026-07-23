@@ -72,14 +72,27 @@ export function Navbar() {
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={cn(
-          'fixed inset-x-0 top-0 z-50 transition-all duration-500',
-          lightBar ? 'glass shadow-level1' : 'border-b border-transparent bg-transparent',
-        )}
+        className="fixed inset-x-0 top-0 z-50"
       >
+        {/* The glass/blur background lives on its own layer, behind the
+            nav content, rather than on the header itself. A `backdrop-filter`
+            toggling on the SAME element that paints the button's text is a
+            known Chromium repaint bug — the text can silently fail to
+            recomposite after the filter engages mid-scroll. Splitting them
+            into DOM siblings (this decorative div paints first, `nav` paints
+            after and sits above it — the same stacking approach used
+            throughout this codebase) means a glitch on the blur layer can
+            no longer touch the text layer at all. */}
+        <div
+          aria-hidden="true"
+          className={cn(
+            'absolute inset-0 transition-[background-color,box-shadow,backdrop-filter] duration-500',
+            lightBar ? 'glass shadow-level1' : 'border-b border-transparent bg-transparent',
+          )}
+        />
         <nav
           aria-label="Primary"
-          className="mx-auto flex h-20 max-w-[1440px] items-center justify-between gap-8 px-4 md:px-12"
+          className="relative mx-auto flex h-20 max-w-[1440px] items-center justify-between gap-8 px-4 md:px-12"
         >
           <Link href="/" className="shrink-0" aria-label={`${site.legalName} — home`}>
             <Image
@@ -88,10 +101,7 @@ export function Navbar() {
               width={290}
               height={99}
               priority
-              className={cn(
-                'h-12 w-auto transition-[filter] duration-500 sm:h-14',
-                !lightBar && 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]',
-              )}
+              className="h-14 w-auto sm:h-16"
             />
           </Link>
 
@@ -184,14 +194,23 @@ export function Navbar() {
           </ul>
 
           <div className="flex items-center gap-3">
-            <Button
-              asChild
-              size="sm"
-              variant={lightBar ? 'primary' : 'inverse'}
-              className="hidden sm:inline-flex"
+            {/* Explicit, self-contained styles per navbar state rather than
+                routing through the shared `Button` variant system — this is
+                the one CTA that has to swap its own background AND text
+                color together on every scroll transition, so keeping both
+                pairs spelled out here removes any ambiguity about which
+                variant is "supposed" to apply when. */}
+            <Link
+              href="/for-talent#submit"
+              className={cn(
+                'hidden h-9 items-center justify-center whitespace-nowrap rounded px-4 text-label-md font-medium transition-colors duration-500 ease-out sm:inline-flex',
+                lightBar
+                  ? 'bg-ink text-white shadow-level1 hover:bg-ink-soft'
+                  : 'bg-white text-ink shadow-level2 hover:bg-surface-subtle',
+              )}
             >
-              <Link href="/for-talent#submit">Upload resume</Link>
-            </Button>
+              Upload resume
+            </Link>
             <button
               type="button"
               onClick={() => setMobileOpen((open) => !open)}

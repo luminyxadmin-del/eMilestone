@@ -35,18 +35,6 @@ export const site = {
     'https://res.cloudinary.com/dtg3lepr4/image/upload/v1783361344/emilestones_logo_p29vbm.png',
 } as const;
 
-/**
- * The only photograph on the homepage — used by the services band. The
- * "what sets us apart" band used to carry a second, faint background photo
- * here (`approach`), removed in favor of an all-in-code glass/rail panel.
- */
-export const homeImagery = {
-  services: {
-    src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Two executives shaking hands in a boardroom after finalizing an appointment',
-  },
-} as const;
-
 /* ---------------------------------------------------------------- navigation */
 
 export const navigation: NavGroup[] = [
@@ -142,8 +130,8 @@ export const services: ServiceOffering[] = [
     cta: 'View capabilities',
     outcomes: [
       'Board and C-suite appointments',
-      'Succession planning and bench assessment',
-      'Confidential replacement searches',
+      'Succession planning and bench strength reviews',
+      'Discreet handling of sensitive board exits',
     ],
   },
   {
@@ -172,7 +160,7 @@ export const services: ServiceOffering[] = [
     cta: 'Explore methodology',
     outcomes: [
       'Talent acquisition operating models',
-      'Interview and assessment design',
+      'Interview panel and scorecard design',
       'Employer brand positioning',
     ],
   },

@@ -71,7 +71,6 @@ export function ContactForm() {
           <Input
             id="firstName"
             autoComplete="given-name"
-            placeholder="Jane"
             aria-invalid={Boolean(errors.firstName)}
             {...register('firstName')}
           />
@@ -85,7 +84,6 @@ export function ContactForm() {
           <Input
             id="lastName"
             autoComplete="family-name"
-            placeholder="Okafor"
             aria-invalid={Boolean(errors.lastName)}
             {...register('lastName')}
           />
@@ -103,7 +101,6 @@ export function ContactForm() {
             id="email"
             type="email"
             autoComplete="email"
-            placeholder="jane@company.com"
             aria-invalid={Boolean(errors.email)}
             {...register('email')}
           />
@@ -118,7 +115,6 @@ export function ContactForm() {
             id="phone"
             type="tel"
             autoComplete="tel"
-            placeholder="+1 555 000 0000"
             {...register('phone')}
           />
         </Field>
@@ -133,7 +129,6 @@ export function ContactForm() {
         <Input
           id="company"
           autoComplete="organization"
-          placeholder="Your organization"
           {...register('company')}
         />
       </Field>
@@ -174,7 +169,6 @@ export function ContactForm() {
         <Textarea
           id="message"
           rows={6}
-          placeholder="We are searching for a CFO to lead a post-acquisition integration…"
           aria-invalid={Boolean(errors.message)}
           {...register('message')}
         />
