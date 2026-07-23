@@ -90,6 +90,10 @@ export interface OfficeLocation {
   address: string[];
   mapUrl: string;
   primary: boolean;
+  /** Office-specific contact details, where they differ from the site-wide
+   *  `site.phone`/`site.email` (e.g. a city's dedicated HR inbox). */
+  phone?: string;
+  email?: string;
 }
 
 /* ------------------------------------------------------ home difference band */

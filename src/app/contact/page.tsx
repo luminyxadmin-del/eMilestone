@@ -19,7 +19,7 @@ const trail = [
 export const metadata: Metadata = buildMetadata({
   title: 'Contact Us',
   description:
-    'Connect with the eMilestones team to start a confidential conversation about your executive search needs. Offices in New York, London and Singapore.',
+    'Connect with the eMilestones team to start a confidential conversation about your executive search needs. Offices in Mumbai and Delhi.',
   path: '/contact',
 });
 
@@ -114,11 +114,11 @@ export default function ContactPage() {
               Our offices
             </p>
             <h2 className="mt-6 text-head-lg text-ink">
-              <AccentText text="Three locations, one **standard**" />
+              <AccentText text="Our offices, one **standard**" />
             </h2>
           </Reveal>
 
-          <Stagger className="mt-14 grid gap-6 md:grid-cols-3">
+          <Stagger className="mt-14 grid gap-6 md:grid-cols-2">
             {offices.map((office) => (
               <StaggerItem key={office.city}>
                 <article className="flex h-full flex-col rounded-md border border-line bg-white p-8">
@@ -132,6 +132,38 @@ export default function ContactPage() {
                   <address className="mt-3 flex-1 whitespace-pre-line text-body-md not-italic text-copy-muted">
                     {office.address.join('\n')}
                   </address>
+
+                  {(office.phone ?? office.email) && (
+                    <dl className="mt-4 space-y-1.5 border-t border-line pt-4">
+                      {office.phone && (
+                        <div className="flex items-center gap-2 text-label-md">
+                          <dt className="sr-only">Phone</dt>
+                          <dd>
+                            <a
+                              href={`tel:${office.phone.replace(/[^+\d]/g, '')}`}
+                              className="text-ink underline-offset-4 hover:underline"
+                            >
+                              {office.phone}
+                            </a>
+                          </dd>
+                        </div>
+                      )}
+                      {office.email && (
+                        <div className="flex items-center gap-2 text-label-md">
+                          <dt className="sr-only">Email</dt>
+                          <dd>
+                            <a
+                              href={`mailto:${office.email}`}
+                              className="text-ink underline-offset-4 hover:underline"
+                            >
+                              {office.email}
+                            </a>
+                          </dd>
+                        </div>
+                      )}
+                    </dl>
+                  )}
+
                   <a
                     href={office.mapUrl}
                     target="_blank"

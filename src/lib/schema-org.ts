@@ -15,13 +15,13 @@ export function organizationSchema() {
     telephone: site.phone,
     foundingDate: site.founded,
     sameAs: [site.social.linkedin, site.social.x],
-    areaServed: ['US', 'GB', 'SG'],
+    areaServed: ['IN'],
     knowsAbout: sectors.map((s) => s.name),
     address: offices.map((office) => ({
       '@type': 'PostalAddress',
       streetAddress: office.address[0],
       addressLocality: office.city,
-      addressCountry: office.address[office.address.length - 1],
+      addressCountry: 'IN',
     })),
   };
 }

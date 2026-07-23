@@ -26,6 +26,11 @@ export const viewport: Viewport = {
   themeColor: '#0F172A',
   width: 'device-width',
   initialScale: 1,
+  // Tells the browser this site is light-only, so browsers with an
+  // OS/browser-level forced-dark or auto-dark-mode feature stop guessing
+  // and re-inverting colors on dark-background elements (which was making
+  // white text on ink buttons render as dark-on-dark and disappear).
+  colorScheme: 'light',
 };
 
 export const metadata: Metadata = {

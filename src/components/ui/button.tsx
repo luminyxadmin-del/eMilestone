@@ -4,7 +4,11 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded font-medium transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0',
+  // `[color-scheme:light]` pins every button to its authored colors even
+  // when the browser has an OS/browser-level forced-dark feature enabled —
+  // without it, a dark bg + light text button (e.g. `primary`) can get
+  // BOTH colors independently re-darkened, leaving the label unreadable.
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded font-medium transition-all duration-300 [color-scheme:light] disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {

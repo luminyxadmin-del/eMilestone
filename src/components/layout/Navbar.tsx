@@ -203,7 +203,7 @@ export function Navbar() {
             <Link
               href="/for-talent#submit"
               className={cn(
-                'hidden h-9 items-center justify-center whitespace-nowrap rounded px-4 text-label-md font-medium transition-colors duration-500 ease-out sm:inline-flex',
+                'hidden h-9 items-center justify-center whitespace-nowrap rounded px-4 text-label-md font-medium transition-colors duration-500 ease-out [color-scheme:light] sm:inline-flex',
                 lightBar
                   ? 'bg-ink text-white shadow-level1 hover:bg-ink-soft'
                   : 'bg-white text-ink shadow-level2 hover:bg-surface-subtle',

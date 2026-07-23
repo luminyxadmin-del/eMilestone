@@ -30,6 +30,14 @@
   }
 
   html {
+    /* Without this, browsers with an OS/browser-level forced-dark or
+       auto-dark-mode setting (common on Windows + Chromium) can silently
+       re-invert colors on elements that already have a dark background
+       and light text — e.g. an ink button with white text ends up with
+       BOTH the background and the text darkened, since the browser
+       "corrects" what it assumes is unstyled/light-mode-only content.
+       This declares the page as light-only so browsers stop guessing. */
+    color-scheme: light;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;

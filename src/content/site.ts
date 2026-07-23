@@ -23,9 +23,9 @@ export const site = {
   description:
     'eMilestones Executive Search connects world-class leadership with premier organizations across technology, healthcare, financial services, consumer, industrial and energy sectors.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://milestones-executive.com',
-  email: 'contact@milestones.com',
-  phone: '+1 (800) 555-0199',
-  phoneHref: '+18005550199',
+  email: 'career@emilestones.net',
+  phone: '022-4079 4567',
+  phoneHref: '+912240794567',
   founded: '2009',
   social: {
     linkedin: 'https://www.linkedin.com/company/milestones-executive-search',
@@ -681,31 +681,33 @@ export const featuredRoles = [
 
 export const offices: OfficeLocation[] = [
   {
-    city: 'New York',
-    label: 'Global Headquarters',
-    address: ['100 Park Avenue, Suite 1500', 'New York, NY 10017', 'United States'],
-    mapUrl: 'https://maps.google.com/?q=100+Park+Avenue+Suite+1500+New+York+NY+10017',
+    city: 'Mumbai',
+    label: 'Head Office',
+    address: [
+      'C-13, Ground Floor, Kailas Vaibhav Complex',
+      'Vikhroli Parksite, Near Nagbaba Temple',
+      'LBS Marg, Vikhroli (W), Mumbai 400079',
+    ],
+    mapUrl:
+      'https://www.google.com/maps/search/?api=1&query=C-13+Kailas+Vaibhav+Complex+Vikhroli+Parksite+LBS+Marg+Vikhroli+West+Mumbai+400079',
     primary: true,
+    phone: '022-4079 4567',
+    email: 'career@emilestones.net',
   },
   {
-    city: 'London',
-    label: 'EMEA',
-    address: ['30 St Mary Axe', 'London EC3A 8BF', 'United Kingdom'],
-    mapUrl: 'https://maps.google.com/?q=30+St+Mary+Axe+London',
+    city: 'Delhi',
+    label: 'Delhi Office',
+    address: ['9/905 Kailash Building', '26, KG Marg, Connaught Place', 'Delhi 110001'],
+    mapUrl:
+      'https://www.google.com/maps/search/?api=1&query=9%2F905+Kailash+Building+26+KG+Marg+Connaught+Place+Delhi+110001',
     primary: false,
-  },
-  {
-    city: 'Singapore',
-    label: 'APAC',
-    address: ['1 Raffles Place, Tower 2', 'Singapore 048616', 'Singapore'],
-    mapUrl: 'https://maps.google.com/?q=1+Raffles+Place+Singapore',
-    primary: false,
+    email: 'hrdelhi@emilestones.net',
   },
 ];
 
 export const businessHours = [
-  { days: 'Monday – Friday', hours: '9:00 AM – 6:00 PM EST' },
-  { days: 'Saturday', hours: '10:00 AM – 2:00 PM EST' },
+  { days: 'Monday – Friday', hours: '9:30 AM – 6:30 PM IST' },
+  { days: 'Saturday', hours: '10:00 AM – 2:00 PM IST' },
   { days: 'Sunday', hours: 'Closed' },
 ];
 
