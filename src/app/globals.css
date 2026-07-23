@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 11%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-surface font-sans text-copy;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'ss01';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-balance font-display;
+  }
+
+  p {
+    @apply text-pretty;
+  }
+
+  ::selection {
+    @apply bg-amber/25 text-ink;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ink ring-offset-2 ring-offset-surface;
+  }
+}
+
+@layer components {
+  /* Signature device: the milestone rail. A hairline track with an amber marker,
+     used anywhere the site expresses a stage in a sequence. */
+  .eyebrow {
+    @apply text-label-sm uppercase tracking-[0.18em] text-copy-muted;
+  }
+
+  .glass {
+    @apply border-b border-line bg-white/85 backdrop-blur-xl backdrop-saturate-150;
+  }
+
+  .section {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-line;
+  }
+
+  /* Canonical card shell. The top rail sweeps in amber on hover — the same
+     hairline-plus-marker device as the milestone rail, in miniature. */
+  .card-premium {
+    @apply relative overflow-hidden rounded-lg border border-line bg-white shadow-level1 transition-all duration-500 ease-out;
+  }
+
+  .card-premium::before {
+    content: '';
+    @apply absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-amber transition-transform duration-500 ease-out;
+  }
+
+  .card-premium:hover {
+    @apply -translate-y-1 border-line-strong shadow-level2;
+  }
+
+  .card-premium:hover::before {
+    @apply scale-x-100;
+  }
+}
+
+@layer utilities {
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 10%,
+      #000 90%,
+      transparent
+    );
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
