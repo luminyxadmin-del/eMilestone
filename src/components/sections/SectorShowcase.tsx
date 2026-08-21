@@ -1,7 +1,9 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
+import Link from 'next/link';
 import { Container } from '@/components/ui/container';
+import { Button } from '@/components/ui/button';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { SectionGlow } from '@/components/ui/section-glow';
 import { Stagger, StaggerItem } from '@/components/motion/Stagger';
@@ -26,12 +28,12 @@ export function SectorShowcase() {
       <Container className="relative">
         <SectionHeading
           eyebrow="Where we place leaders"
-          title="Six sectors, one standard of **rigor**"
+          title="Specialist sectors, one standard of **rigor**"
           description="Hover a sector to see the roles our consultants place most often within it."
         />
 
         <Stagger className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {sectors.map((sector, index) => (
+          {sectors.slice(0, 6).map((sector, index) => (
             <StaggerItem key={sector.slug}>
               <motion.article
                 whileHover={reduce ? undefined : { y: -8 }}
@@ -96,6 +98,12 @@ export function SectorShowcase() {
             </StaggerItem>
           ))}
         </Stagger>
+
+        <div className="mt-10 flex justify-center">
+          <Button asChild variant="outline" size="md">
+            <Link href="/expertise">View all 16 sectors</Link>
+          </Button>
+        </div>
       </Container>
     </section>
   );

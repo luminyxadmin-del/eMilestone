@@ -34,7 +34,7 @@ export default function ExpertisePage() {
       <SectorGrid
         detailed
         eyebrow="Practice areas"
-        title="Six sectors, six **track records**"
+        title="16 sectors, one standard of **excellence**"
         description="What we look for in each market, and a recent placement that shows it in practice."
       />
       <StatsBand items={expertiseStats} />

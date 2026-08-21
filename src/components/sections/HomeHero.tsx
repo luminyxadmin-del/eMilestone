@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
-import { ArrowDown, ArrowRight } from 'lucide-react';
+import { ArrowDown, ArrowRight, MapPin } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
 import { TextReveal } from '@/components/motion/TextReveal';
@@ -46,9 +46,18 @@ export function HomeHero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="eyebrow flex items-center gap-3 text-white/50"
+            className="eyebrow flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-white/50"
           >
             <span aria-hidden="true" className="h-px w-8 bg-amber" />
+            <a
+              href="https://www.luminyx.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-soft transition-colors hover:text-amber"
+            >
+              A Luminyx Ventures company
+            </a>
+            <span aria-hidden="true" className="hidden h-1 w-1 rounded-full bg-white/35 sm:block" />
             Retained executive search since 2009
             <span aria-hidden="true" className="h-px w-8 bg-amber" />
           </motion.p>
@@ -65,11 +74,10 @@ export function HomeHero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.65 }}
-            className="mt-8 max-w-2xl text-body-lg text-white/65"
+            className="mt-8 max-w-xl text-body-lg text-white/65"
           >
-            We connect world-class leadership with premier organizations to drive
-            sustainable growth and innovation — quietly, and with a shortlist you could
-            hire from twice.
+            Executive search with on-the-ground reach across India, the UAE and Africa —
+            delivered with discretion, market intelligence and judgment.
           </motion.p>
 
           <motion.div
@@ -90,6 +98,22 @@ export function HomeHero() {
               <Link href="/for-talent">Join the network</Link>
             </Button>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1 }}
+            className="mt-14 w-full max-w-3xl border-y border-white/15 py-5"
+          >
+            <p className="text-label-sm font-semibold uppercase tracking-[0.18em] text-white/40">
+              Regional presence
+            </p>
+            <div className="mt-4 grid divide-y divide-white/10 text-left sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+              <PresenceCard place="India" address="Mumbai · Vikhroli West" />
+              <PresenceCard place="UAE" address="Al Hulaila, Ras Al Khaimah" />
+              <PresenceCard place="Africa" address="East Africa · Nairobi to Kigali" />
+            </div>
+          </motion.div>
         </motion.div>
       </Container>
 
@@ -109,5 +133,17 @@ export function HomeHero() {
         </motion.span>
       </motion.a>
     </section>
+  );
+}
+
+function PresenceCard({ place, address }: { place: string; address: string }) {
+  return (
+    <div className="py-3 sm:px-5 sm:py-0 first:pl-0 last:pr-0">
+      <div className="flex items-center gap-2 text-label-sm font-semibold uppercase tracking-[0.14em] text-amber-soft">
+        <MapPin aria-hidden="true" className="size-3.5" />
+        {place}
+      </div>
+      <p className="mt-1.5 text-label-md text-white/65">{address}</p>
+    </div>
   );
 }

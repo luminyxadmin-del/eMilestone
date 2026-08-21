@@ -87,7 +87,9 @@ export function Navbar() {
           aria-hidden="true"
           className={cn(
             'absolute inset-0 transition-[background-color,box-shadow,backdrop-filter] duration-500',
-            lightBar ? 'glass shadow-level1' : 'border-b border-transparent bg-transparent',
+            lightBar
+              ? 'border-b border-line bg-white/95 shadow-level2 backdrop-blur-xl backdrop-saturate-150'
+              : 'border-b border-transparent bg-transparent',
           )}
         />
         <nav
@@ -124,14 +126,14 @@ export function Navbar() {
                   aria-current={isActive(item.href) ? 'page' : undefined}
                   aria-expanded={item.children ? openGroup === item.label : undefined}
                   className={cn(
-                    'relative flex items-center gap-1 rounded px-3 py-2 text-label-md transition-colors duration-500',
+                    'relative flex items-center gap-1 rounded-md px-3 py-2 text-label-md transition-colors duration-500',
                     lightBar
                       ? isActive(item.href)
-                        ? 'text-ink'
-                        : 'text-copy-muted hover:text-ink'
+                        ? 'bg-amber/15 font-semibold text-ink shadow-[0_0_0_1px_rgba(245,158,11,0.25)]'
+                        : 'font-medium text-ink/80 hover:bg-amber/10 hover:text-ink'
                       : isActive(item.href)
-                        ? 'text-white'
-                        : 'text-white/75 hover:text-white',
+                        ? 'bg-amber text-ink font-semibold shadow-[0_8px_20px_rgba(245,158,11,0.28)]'
+                        : 'text-white/75 hover:bg-white/10 hover:text-white',
                   )}
                 >
                   {item.label}
@@ -147,7 +149,7 @@ export function Navbar() {
                   {isActive(item.href) && (
                     <motion.span
                       layoutId="nav-marker"
-                      className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-amber"
+                      className="absolute inset-x-2 -bottom-1 h-1 rounded-full bg-amber shadow-[0_2px_8px_rgba(245,158,11,0.65)]"
                       transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                     />
                   )}
@@ -258,8 +260,10 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      'block py-5 font-display text-head-sm',
-                      isActive(item.href) ? 'text-ink' : 'text-copy-muted',
+                      'block rounded-md px-3 py-5 font-display text-head-sm transition-colors',
+                      isActive(item.href)
+                        ? 'bg-amber/15 font-bold text-ink ring-1 ring-amber/30'
+                        : 'text-copy-muted hover:bg-amber/10 hover:text-ink',
                     )}
                   >
                     {item.label}
