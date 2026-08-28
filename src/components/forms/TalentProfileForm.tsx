@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'sonner';
@@ -11,10 +10,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Field } from '@/components/ui/field';
-import { ResumeDropzone } from '@/components/forms/ResumeDropzone';
 
 export function TalentProfileForm() {
-  const [resumePath, setResumePath] = useState('');
   const {
     register,
     handleSubmit,
@@ -23,16 +20,11 @@ export function TalentProfileForm() {
   } = useForm<TalentProfileInput>({ resolver: zodResolver(talentProfileSchema) });
 
   const onSubmit = async (values: TalentProfileInput) => {
-    if (!resumePath) {
-      toast.error('Add your resume before submitting.');
-      return;
-    }
-
     try {
       const response = await fetch('/api/talent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...values, resumePath }),
+        body: JSON.stringify(values),
       });
       const result = (await response.json()) as { message?: string };
 
@@ -42,7 +34,6 @@ export function TalentProfileForm() {
       }
       toast.success('Profile received. A consultant will be in touch if there is a fit.');
       reset();
-      setResumePath('');
     } catch {
       toast.error('Network problem. Check your connection and try again.');
     }
@@ -136,25 +127,28 @@ export function TalentProfileForm() {
         </Field>
       </div>
 
-      <Field
-        label="LinkedIn profile"
-        htmlFor="linkedinUrl"
-        error={errors.linkedinUrl?.message}
-        hint="Optional"
-      >
-        <Input
-          id="linkedinUrl"
-          type="url"
-          placeholder="https://linkedin.com/in/…"
-          {...register('linkedinUrl')}
-        />
-      </Field>
-
-      <div className="space-y-2">
-        <span className="text-label-md font-medium text-ink">
-          Resume <span className="text-amber-deep">*</span>
-        </span>
-        <ResumeDropzone onUploaded={setResumePath} />
+      <div className="grid gap-6 sm:grid-cols-2">
+        <Field
+          label="LinkedIn profile"
+          htmlFor="linkedinUrl"
+          error={errors.linkedinUrl?.message}
+          hint="Optional"
+        >
+          <Input
+            id="linkedinUrl"
+            type="url"
+            placeholder="https://linkedin.com/in/…"
+            {...register('linkedinUrl')}
+          />
+        </Field>
+        <Field label="Phone" htmlFor="talent-phone" error={errors.phone?.message} hint="Optional">
+          <Input
+            id="talent-phone"
+            type="tel"
+            autoComplete="tel"
+            {...register('phone')}
+          />
+        </Field>
       </div>
 
       <Field
@@ -183,6 +177,7 @@ export function TalentProfileForm() {
       <Button
         type="submit"
         size="lg"
+        variant="accent"
         disabled={isSubmitting}
         className="w-full sm:w-auto"
       >

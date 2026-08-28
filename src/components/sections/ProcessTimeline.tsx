@@ -6,20 +6,25 @@ import { Container } from '@/components/ui/container';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { Icon } from '@/lib/icon';
 import { processSteps } from '@/content/site';
+import type { ProcessStep } from '@/types';
 
 /**
  * The signature milestone rail. A hairline track runs the height of the
  * section and fills with amber as the reader scrolls, so the visual literally
  * measures progress through a search — which is what the firm is named for.
+ * `steps` defaults to the client-facing search process, but the same rail
+ * works for any staged sequence (e.g. the candidate-facing join process).
  */
 export function ProcessTimeline({
   eyebrow = 'How we work',
   title = 'Our **methodology**',
   description = 'A rigorous, multi-phase approach designed to secure top-tier executive talent — and to tell you exactly where the search stands at any moment.',
+  steps = processSteps,
 }: {
   eyebrow?: string;
   title?: string;
   description?: string;
+  steps?: ProcessStep[];
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
@@ -52,7 +57,7 @@ export function ProcessTimeline({
           />
 
           <ol className="space-y-14">
-            {processSteps.map((step, index) => (
+            {steps.map((step, index) => (
               <motion.li
                 key={step.step}
                 initial={{ opacity: 0, y: 24 }}

@@ -5,10 +5,15 @@ import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
   // `[color-scheme:light]` pins every button to its authored colors even
-  // when the browser has an OS/browser-level forced-dark feature enabled —
-  // without it, a dark bg + light text button (e.g. `primary`) can get
-  // BOTH colors independently re-darkened, leaving the label unreadable.
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded font-medium transition-all duration-300 [color-scheme:light] disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0',
+  // when the browser has an OS/browser-level forced-dark feature enabled.
+  // `transform-gpu` + `[backface-visibility:hidden]` force the button onto
+  // its own stable GPU compositing layer — on some Chromium/driver
+  // combinations, a `box-shadow` transitioning via `transition-all` on an
+  // element can cause that element's own text to fail to repaint, even
+  // though its computed color is correct. Scoping the transition (instead
+  // of `-all`) avoids re-triggering that same class of repaint on every
+  // property change, box-shadow included.
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded font-medium transition-[background-color,border-color,box-shadow,opacity] duration-300 [color-scheme:light] transform-gpu [backface-visibility:hidden] disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {

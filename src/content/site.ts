@@ -21,7 +21,7 @@ export const site = {
   legalName: 'eMilestones Executive Search',
   tagline: 'Empowering your business through executive **talent**',
   description:
-    'eMilestones Executive Search connects world-class leadership with premier organizations across technology, healthcare, financial services, consumer, industrial and energy sectors.',
+    'eMilestones Executive Search, part of Luminyx Ventures, connects world-class leadership with premier organizations across India, the UAE and Africa.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://milestones-executive.com',
   email: 'career@emilestones.net',
   phone: '022-4079 4567',
@@ -33,6 +33,8 @@ export const site = {
   },
   logoUrl:
     'https://res.cloudinary.com/dtg3lepr4/image/upload/v1783361344/emilestones_logo_p29vbm.png',
+  heroBannerUrl:
+    'https://res.cloudinary.com/dtg3lepr4/image/upload/v1787885008/Hero_Banner_05_llgoir.png',
 } as const;
 
 /* ---------------------------------------------------------------- navigation */
@@ -103,7 +105,7 @@ export const whoWeAreStats: Stat[] = [
 
 /** Sector-coverage-oriented — Expertise owns these. */
 export const expertiseStats: Stat[] = [
-  { value: 6, label: 'Sectors covered, each led by a dedicated partner', icon: 'LayoutGrid' },
+  { value: 16, label: 'Sectors covered by our specialist search teams', icon: 'LayoutGrid' },
   {
     value: 12,
     suffix: '+',
@@ -325,23 +327,32 @@ export const clientOutcomes: ClientOutcome[] = [
 
 export const sectors: Sector[] = [
   {
-    slug: 'technology',
-    name: 'Technology',
-    icon: 'Cpu',
-    description:
-      'Securing visionary leaders for SaaS, enterprise software, AI/ML and deep tech. We focus on engineering scale and product innovation.',
-    roles: ['Chief Technology Officer', 'VP Engineering', 'Chief Product Officer'],
-    detail:
-      'We work the full stack from infrastructure to applied AI, and we can tell the difference between a CTO who ships and one who presents roadmaps.',
-    examplePlacement:
-      'CTO for a Series D infrastructure company, six weeks from brief to signed offer.',
+    slug: 'bfsi', name: 'BFSI', icon: 'Landmark',
+    description: 'Leadership search across banking, financial services and insurance, from established institutions to high-growth platforms.',
+    roles: ['Chief Executive Officer', 'Chief Risk Officer', 'Business Head'],
+    detail: 'We identify leaders with the regulatory judgment, commercial discipline and digital vision to lead complex financial institutions.',
+    examplePlacement: 'Business Head for a national financial-services platform.',
+  },
+  {
+    slug: 'communication-technology', name: 'Communication & Technology', icon: 'Radio',
+    description: 'Connecting telecom, connectivity and technology businesses with leaders who can build resilient, future-ready platforms.',
+    roles: ['Chief Technology Officer', 'Chief Commercial Officer', 'VP Networks'],
+    detail: 'Our searches span communications infrastructure, enterprise technology and the leaders who turn technical capability into growth.',
+    examplePlacement: 'Chief Commercial Officer for a communications-services company.',
+  },
+  {
+    slug: 'pharmaceutical-life-sciences', name: 'Pharmaceutical & Life Sciences', icon: 'FlaskConical',
+    description: 'Securing leaders for pharmaceutical, biotech and life-sciences organizations navigating innovation and regulation.',
+    roles: ['Chief Medical Officer', 'Head of R&D', 'VP Regulatory Affairs'],
+    detail: 'We assess leaders for the scientific credibility and execution discipline needed to move products from development to market.',
+    examplePlacement: 'VP Regulatory Affairs for a growing pharmaceutical company.',
   },
   {
     slug: 'healthcare',
     name: 'Healthcare',
     icon: 'HeartPulse',
     description:
-      'Navigating regulatory complexity and innovation across biotechnology, pharmaceuticals, medical devices and healthcare services.',
+      'Navigating care delivery, medtech and healthcare services with leaders who improve outcomes at scale.',
     roles: [
       'Chief Medical Officer',
       'VP Regulatory Affairs',
@@ -350,55 +361,91 @@ export const sectors: Sector[] = [
     detail:
       'Regulatory fluency is table stakes; we look for leaders who have taken a therapy or a device through the approval process themselves.',
     examplePlacement:
-      'Chief Medical Officer for a mid-cap biotech, placed ahead of a Phase III readout.',
+      'Chief Medical Officer for a healthcare-services organization.',
   },
   {
-    slug: 'financial-services',
-    name: 'Financial Services',
-    icon: 'Landmark',
-    description:
-      'Identifying quantitative and strategic talent for asset management, private equity, fintech and traditional banking institutions.',
+    slug: 'oil-energy', name: 'Oil & Energy', icon: 'Zap',
+    description: 'Partnering with traditional energy and transition-focused businesses to place leaders for a changing global market.',
+    roles: ['Chief Executive Officer', 'VP Operations', 'Head of Energy Transition'],
+    detail: 'We place executives who can manage asset performance today while building a credible energy-transition strategy.',
+    examplePlacement: 'VP Operations for an integrated energy business.',
+  },
+  {
+    slug: 'infrastructure', name: 'Infrastructure', icon: 'Building2',
+    description: 'Finding leaders for infrastructure businesses where operational reliability, capital discipline and delivery matter.',
+    roles: ['Chief Executive Officer', 'Project Director', 'Chief Operating Officer'],
+    detail: 'Our infrastructure searches focus on leaders with experience delivering major assets, teams and stakeholder outcomes.',
+    examplePlacement: 'Project Director for a large-scale infrastructure platform.',
+  },
+  {
+    slug: 'metals-mining', name: 'Metals & Mining', icon: 'Pickaxe',
+    description: 'Executive talent for metals and mining organizations balancing safety, productivity, sustainability and growth.',
+    roles: ['Mine General Manager', 'Chief Operating Officer', 'Head of Sustainability'],
+    detail: 'We identify operating leaders who understand complex assets and can raise standards across safety, production and community engagement.',
+    examplePlacement: 'Chief Operating Officer for a diversified metals business.',
+  },
+  {
+    slug: 'management-consulting', name: 'Management Consulting', icon: 'BriefcaseBusiness',
+    description: 'Helping consulting firms hire practice-building leaders with trusted client relationships and distinctive expertise.',
+    roles: ['Managing Partner', 'Practice Leader', 'Partner'],
+    detail: 'We assess commercial credibility, sector depth and the ability to build high-performing consulting teams.',
+    examplePlacement: 'Practice Leader for a strategy consulting firm.',
+  },
+  {
+    slug: 'financial-services', name: 'Financial Services', icon: 'ChartNoAxesCombined',
+    description: 'Identifying quantitative and strategic talent for asset management, private equity, fintech and banking institutions.',
     roles: ['Chief Financial Officer', 'Head of Risk', 'Managing Director, Investments'],
-    detail:
-      'From risk to investments, our shortlists hold up to board-level technical scrutiny because our consultants come from the seats they now recruit for.',
-    examplePlacement:
-      'Head of Risk for a regional bank, replacing an outgoing hire inside the regulatory notice window.',
+    detail: 'Our shortlists stand up to board-level technical scrutiny across investments, risk and financial transformation.',
+    examplePlacement: 'Head of Risk for a financial-services institution.',
   },
   {
-    slug: 'consumer-retail',
-    name: 'Consumer & Retail',
-    icon: 'Store',
-    description:
-      'Sourcing brand-builders and operational experts for global retail, e-commerce and luxury consumer goods in a digital-first era.',
-    roles: ['Chief Marketing Officer', 'VP E-commerce', 'Global Brand Director'],
-    detail:
-      'We recruit for brands managing the shift to digital-first commerce without losing what made the brand worth buying in the first place.',
-    examplePlacement:
-      'Chief Marketing Officer for a direct-to-consumer retailer ahead of a Series C raise.',
+    slug: 'technology', name: 'Technology', icon: 'Cpu',
+    description: 'Securing visionary leaders for SaaS, enterprise software, AI/ML and deep-tech businesses.',
+    roles: ['Chief Technology Officer', 'VP Engineering', 'Chief Product Officer'],
+    detail: 'We work across infrastructure and applied AI to find leaders who turn product ambition into operating scale.',
+    examplePlacement: 'CTO for a Series D infrastructure company.',
   },
   {
-    slug: 'industrial',
-    name: 'Industrial',
-    icon: 'Factory',
-    description:
-      'Driving efficiency and transformation through leadership in manufacturing, supply chain, logistics and heavy industry.',
+    slug: 'media-entertainment', name: 'Media & Entertainment', icon: 'Clapperboard',
+    description: 'Leadership search for media, content and entertainment businesses adapting to new audiences and platforms.',
+    roles: ['Chief Content Officer', 'Chief Revenue Officer', 'Business Head'],
+    detail: 'We find leaders who combine creative instinct with commercial and audience-growth discipline.',
+    examplePlacement: 'Chief Revenue Officer for a digital media company.',
+  },
+  {
+    slug: 'consumers-retail', name: 'Consumers & Retail', icon: 'Store',
+    description: 'Sourcing brand-builders and operating experts for consumer, retail and luxury businesses.',
+    roles: ['Chief Marketing Officer', 'Retail Director', 'Global Brand Director'],
+    detail: 'We recruit leaders who can build enduring brands while evolving the customer experience.',
+    examplePlacement: 'Chief Marketing Officer for a consumer brand.',
+  },
+  {
+    slug: 'manufacturing', name: 'Manufacturing', icon: 'Factory',
+    description: 'Driving performance and transformation through manufacturing, supply-chain and operations leadership.',
     roles: ['Chief Operating Officer', 'VP Supply Chain', 'Plant President'],
-    detail:
-      'Supply chain and manufacturing leadership where the P&L consequences of a bad hire show up inside a single quarter.',
-    examplePlacement:
-      "Plant President for a multi-site manufacturer, sourced from a competitor's operating bench.",
+    detail: 'We find leaders whose operational decisions improve quality, delivery and P&L performance.',
+    examplePlacement: 'Plant President for a multi-site manufacturer.',
   },
   {
-    slug: 'energy',
-    name: 'Energy',
-    icon: 'Zap',
-    description:
-      'Partnering with traditional utilities and renewable pioneers to place executives leading the global energy transition.',
-    roles: ['Chief Sustainability Officer', 'VP Renewables', 'Head of Grid Strategy'],
-    detail:
-      'We place leaders who can run a traditional utility and credibly build the renewables business sitting alongside it.',
-    examplePlacement:
-      "VP Renewables for a regional utility building its first dedicated clean-energy division.",
+    slug: 'chemicals-industrial-goods', name: 'Chemicals & Industrial Goods', icon: 'TestTubes',
+    description: 'Executive talent for chemicals and industrial-goods companies navigating complex markets and operations.',
+    roles: ['Business Unit President', 'VP Operations', 'Commercial Director'],
+    detail: 'Our searches prioritize leaders with technical depth, safety leadership and commercial range.',
+    examplePlacement: 'Business Unit President for a specialty-chemicals company.',
+  },
+  {
+    slug: 'e-commerce', name: 'E-commerce', icon: 'ShoppingCart',
+    description: 'Finding digital commerce leaders who can grow customer acquisition, conversion and fulfilment at pace.',
+    roles: ['Chief Digital Officer', 'VP Growth', 'Head of Marketplace'],
+    detail: 'We assess for sharp digital-commercial instincts alongside the operational rigor needed to scale demand.',
+    examplePlacement: 'VP Growth for a consumer e-commerce platform.',
+  },
+  {
+    slug: 'funded-startups', name: 'Funded Start-ups', icon: 'Rocket',
+    description: 'Building leadership teams for funded start-ups at the moments when ambition needs repeatable execution.',
+    roles: ['Chief Executive Officer', 'Chief Revenue Officer', 'VP People'],
+    detail: 'We connect founders with operators who have seen the next stage of scale and can lead it with pace.',
+    examplePlacement: 'Chief Revenue Officer for a venture-backed start-up.',
   },
 ];
 
@@ -650,30 +697,40 @@ export const candidateServices = [
   },
 ];
 
-export const featuredRoles = [
+/** The candidate-facing counterpart to `processSteps` — what happens after
+ *  someone joins the network, rather than fabricated sample job listings. */
+export const candidateProcessSteps: ProcessStep[] = [
   {
-    id: 'cto-fintech',
-    sector: 'Technology',
-    title: 'Chief Technology Officer',
-    company: 'Series C FinTech',
-    location: 'New York / Hybrid',
-    engagement: 'Retained',
+    step: '01',
+    title: 'Register',
+    icon: 'UserPlus',
+    summary: 'Share your background directly with a consultant.',
+    detail:
+      'A short profile, not a database entry. What you submit goes straight to a partner working your sector — never a generic inbox.',
   },
   {
-    id: 'vp-finance',
-    sector: 'Finance',
-    title: 'VP of Finance',
-    company: 'Global Manufacturing Enterprise',
-    location: 'London, UK',
-    engagement: 'Exclusive',
+    step: '02',
+    title: 'Get mapped',
+    icon: 'Radar',
+    summary: 'We weigh you against live and upcoming mandates.',
+    detail:
+      'Most searches we run are confidential and never advertised. Your profile is matched against the sector, seniority and scope of every relevant mandate as it opens.',
   },
   {
-    id: 'coo-health',
-    sector: 'Operations',
-    title: 'Chief Operating Officer',
-    company: 'Healthcare Innovator',
-    location: 'Remote (US)',
-    engagement: 'Confidential',
+    step: '03',
+    title: 'Hear from us, on fit',
+    icon: 'PhoneCall',
+    summary: 'No mass outreach. No recruiter spam.',
+    detail:
+      'You hear from us only when there is a mandate worth your time — and only after a consultant has reviewed the fit personally.',
+  },
+  {
+    step: '04',
+    title: 'You stay in control',
+    icon: 'ShieldCheck',
+    summary: 'Nothing moves without your sign-off.',
+    detail:
+      'Your profile is shared with a client only after you approve that specific role. You can ask us to delete your record at any time.',
   },
 ];
 

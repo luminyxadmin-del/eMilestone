@@ -186,6 +186,7 @@ export function ContactForm() {
       <Button
         type="submit"
         size="lg"
+        variant="accent"
         disabled={isSubmitting}
         className="w-full sm:w-auto"
       >

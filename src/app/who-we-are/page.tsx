@@ -39,28 +39,33 @@ export default function WhoWeArePage() {
           <div className="grid gap-12 lg:grid-cols-[minmax(0,24rem)_1fr] lg:gap-24">
             <SectionHeading
               eyebrow="Our heritage"
-              title="A legacy of precision and **partnership**"
+              title="Every great journey is remembered by its **milestones.**"
             />
             <Reveal delay={0.15} className="space-y-6 text-body-lg text-copy-muted">
               <p>
-                Founded on the principles of discretion, insight and unyielding quality,
-                eMilestones was established to address a critical gap in top-tier executive
-                recruitment. We believe leadership is the ultimate lever for
-                organizational success.
-              </p>
-              <p>
-                Our approach combines the analytical rigor of premier consultancies with
-                the personalized touch of a boutique advisory firm. We do not simply fill
-                roles; we align human potential with strategic ambition.
+                For thousands of years, milestones stood quietly along the world&apos;s roads.
+                They did more than measure distance. They reminded travellers how far they
+                had come, reassured them they were on the right path, and gave them
+                confidence that their destination was within reach.
               </p>
               <p className="border-l-2 border-amber pl-6 font-display text-head-sm text-ink">
-                Every mandate is led by a partner, from the first scoping conversation to
-                the twelve-month review.
+                The most meaningful journeys are still measured the same way.
               </p>
               <p>
-                That model limits how many searches we can run at once. It is the
-                constraint the whole firm is built around, and the reason our clients meet
-                the same people at week one and week fifty.
+                Businesses are shaped by milestones—a new market entered, a transformative
+                leader hired, a team built for the future. Careers are defined by milestones
+                too—a first opportunity, a leadership role, a bold move across borders, or
+                the chance to create a lasting impact.
+              </p>
+              <p>
+                At Emilestones, we believe every appointment is one of those defining
+                moments. Every successful placement is more than a role filled; it is a
+                milestone that changes the trajectory of an organisation and the life of a
+                professional.
+              </p>
+              <p className="border-l-2 border-amber pl-6 font-display text-head-sm text-ink">
+                Across India, the Gulf and Africa, we help businesses and talent move
+                forward with confidence, creating milestones that lead to enduring success.
               </p>
             </Reveal>
           </div>

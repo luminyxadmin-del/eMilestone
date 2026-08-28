@@ -32,7 +32,11 @@ export function LogoMarquee() {
           {items.map((item, index) => (
             <li
               key={`${item}-${index}`}
-              className="whitespace-nowrap font-display text-body-lg text-copy-faint"
+              className={
+                index % 2 === 0
+                  ? 'whitespace-nowrap rounded-full border border-amber/25 bg-amber/10 px-5 py-2 font-display text-body-lg font-semibold text-amber-deep shadow-sm'
+                  : 'whitespace-nowrap rounded-full border border-blue-200 bg-blue-50 px-5 py-2 font-display text-body-lg font-semibold text-blue-700 shadow-sm'
+              }
             >
               {item}
             </li>
