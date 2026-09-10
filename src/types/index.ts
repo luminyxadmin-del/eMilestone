@@ -66,8 +66,10 @@ export interface TeamMember {
   name: string;
   role: string;
   bio: string;
-  email: string;
-  linkedin: string;
+  /** Omitted where a real, verified contact detail isn't available for
+   *  this person — never fabricate one. */
+  email?: string;
+  linkedin?: string;
   initials: string;
   focus: string;
   avatarUrl?: string;
