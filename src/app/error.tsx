@@ -25,7 +25,7 @@ export default function Error({
         <h1 className="mt-8 text-head-lg text-ink">This page did not load</h1>
         <p className="mx-auto mt-6 max-w-md text-body-lg text-copy-muted">
           The error has been logged. Try again — if it keeps happening, email
-          contact@milestones.com and we will look into it.
+          support@emilestones.net and we will look into it.
         </p>
         <div className="mt-12">
           <Button size="lg" onClick={reset}>
