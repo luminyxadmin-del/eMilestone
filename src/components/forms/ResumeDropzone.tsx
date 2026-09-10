@@ -52,7 +52,7 @@ export function ResumeDropzone({ onUploaded, error }: ResumeDropzoneProps) {
         setStatus('idle');
         setFileName('');
         setLocalError(
-          'The upload failed. Try again, or email the file to contact@milestones.com.',
+          'The upload failed. Try again, or email the file to support@emilestones.net.',
         );
       }
     },

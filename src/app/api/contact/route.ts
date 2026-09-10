@@ -63,7 +63,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          'We could not record that message. Email contact@milestones.com instead.',
+          'We could not record that message. Email support@emilestones.net instead.',
       },
       { status: 500 },
     );

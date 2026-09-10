@@ -211,7 +211,7 @@ export function Navbar() {
                   : 'bg-white text-ink shadow-level2 hover:bg-surface-subtle',
               )}
             >
-              Upload resume
+              Join the network
             </Link>
             <button
               type="button"
@@ -292,7 +292,7 @@ export function Navbar() {
                 className="pt-8"
               >
                 <Button asChild size="lg" className="w-full">
-                  <Link href="/for-talent#submit">Upload resume</Link>
+                  <Link href="/for-talent#submit">Join the network</Link>
                 </Button>
               </motion.li>
             </motion.ul>
