@@ -23,9 +23,9 @@ export const site = {
   description:
     'eMilestones Executive Search, part of Luminyx Ventures, connects world-class leadership with premier organizations across India, the UAE and Africa.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://milestones-executive.com',
-  email: 'career@emilestones.net',
-  phone: '022-4079 4567',
-  phoneHref: '+912240794567',
+  email: 'support@emilestones.net',
+  phone: '7977704144',
+  phoneHref: '+917977704144',
   founded: '2009',
   social: {
     linkedin: 'https://www.linkedin.com/company/milestones-executive-search',
@@ -553,34 +553,44 @@ export const engagementModel: ValuePillar[] = [
 
 export const team: TeamMember[] = [
   {
-    slug: 'robert-vance',
-    name: 'Robert Vance',
-    role: 'Managing Partner',
-    bio: 'With over 25 years in global finance, Robert leads our financial services practice, specializing in board-level appointments for Fortune 500 institutions.',
-    email: 'robert.vance@milestones.com',
-    linkedin: 'https://www.linkedin.com/in/',
-    initials: 'RV',
-    focus: 'Financial Services',
+    slug: 'shamitha-shetty',
+    name: 'Shamitha Shetty',
+    role: 'Founder & Business Leader',
+    bio: 'Shamitha Shetty is an entrepreneur and business leader with extensive experience in recruitment, executive search, talent strategy and business development across India, the Gulf and Kenya. She works closely with organisations to identify leadership and specialist talent aligned with their business goals, combining a deep understanding of people with a strong understanding of business. At eMilestones, Shamitha is building a relationship-driven, technology-enabled talent solutions firm, focused on connecting exceptional people with organisations that are shaping the future.',
+    initials: 'SS',
+    focus: 'Talent Strategy',
+    avatarUrl:
+      'https://res.cloudinary.com/dtg3lepr4/image/upload/v1784187632/Shamitha_Shetty_Portrait_nhacmp.png',
   },
   {
-    slug: 'elena-rostova',
-    name: 'Elena Rostova',
-    role: 'Partner, Technology',
-    bio: 'Elena drives our technology and innovation practice, identifying visionary leaders who can navigate complex digital transformations and scale high-growth enterprises.',
-    email: 'elena.rostova@milestones.com',
-    linkedin: 'https://www.linkedin.com/in/',
-    initials: 'ER',
-    focus: 'Technology',
+    slug: 'nisha-panicker',
+    name: 'Nisha Panicker',
+    role: 'Chief Operating Officer & Director',
+    bio: 'Nisha Panicker brings 20+ years of experience in executive search, recruitment and client management, with extensive expertise in understanding complex talent requirements and delivering high-quality search mandates. As Chief Operating Officer at eMilestones, Nisha oversees operations, client relationships and recruitment delivery, bringing a strong focus on quality, responsiveness and execution. Her deep understanding of the recruitment industry and long-standing client relationships are central to eMilestones’ commitment to delivering the right talent for the right organisation.',
+    initials: 'NP',
+    focus: 'Client Delivery',
+    avatarUrl:
+      'https://res.cloudinary.com/dtg3lepr4/image/upload/v1784188266/Nisha_Panicker_u0k3op.jpg',
   },
   {
-    slug: 'marcus-thorne',
-    name: 'Marcus Thorne',
-    role: 'Partner, Healthcare',
-    bio: 'Marcus brings clinical expertise and deep regulatory knowledge to executive search, placing top-tier talent in leading healthcare networks and life sciences firms.',
-    email: 'marcus.thorne@milestones.com',
-    linkedin: 'https://www.linkedin.com/in/',
-    initials: 'MT',
-    focus: 'Healthcare',
+    slug: 'ruhi-dongaonkar',
+    name: 'Ruhi Dongaonkar',
+    role: 'Strategic Operations Lead',
+    bio: 'Ruhi Dongaonkar is a strategic operations leader with experience in recruitment, client management, talent delivery and business operations. She works closely with clients and internal teams to understand talent requirements, strengthen recruitment processes and ensure a seamless experience throughout the hiring journey. At eMilestones, Ruhi focuses on building strong delivery capabilities and creating efficient, people-centric processes that help organisations find and retain the right talent.',
+    initials: 'RD',
+    focus: 'Talent Operations',
+    avatarUrl:
+      'https://res.cloudinary.com/dtg3lepr4/image/upload/v1784187914/Ruhi_Dongaonkar_uliulw.jpg',
+  },
+  {
+    slug: 'moksh-galhotra',
+    name: 'Moksh Galhotra',
+    role: 'Business Development & Partnerships',
+    bio: 'Moksh Galhotra is a business development and partnerships professional focused on recruitment, executive search and building long-term client relationships. He works closely with organisations to understand their talent needs, identify new opportunities and develop partnerships that create meaningful value for clients and candidates. At eMilestones, Moksh is focused on expanding the company’s network, building strategic partnerships and connecting organisations with the talent they need to grow.',
+    initials: 'MG',
+    focus: 'Partnerships',
+    avatarUrl:
+      'https://res.cloudinary.com/dtg3lepr4/image/upload/v1784188021/Moksh_Galhotra_wyx0qa.png',
   },
 ];
 
@@ -748,8 +758,8 @@ export const offices: OfficeLocation[] = [
     mapUrl:
       'https://www.google.com/maps/search/?api=1&query=C-13+Kailas+Vaibhav+Complex+Vikhroli+Parksite+LBS+Marg+Vikhroli+West+Mumbai+400079',
     primary: true,
-    phone: '022-4079 4567',
-    email: 'career@emilestones.net',
+    phone: '7977704144',
+    email: 'support@emilestones.net',
   },
   {
     city: 'Delhi',
@@ -758,7 +768,8 @@ export const offices: OfficeLocation[] = [
     mapUrl:
       'https://www.google.com/maps/search/?api=1&query=9%2F905+Kailash+Building+26+KG+Marg+Connaught+Place+Delhi+110001',
     primary: false,
-    email: 'hrdelhi@emilestones.net',
+    phone: '7977704144',
+    email: 'support@emilestones.net',
   },
 ];
 
