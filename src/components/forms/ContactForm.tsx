@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import { Loader2, Send } from 'lucide-react';
 import { contactSchema, type ContactInput } from '@/lib/validations';
 import { inquiryTypes } from '@/content/site';
+import { openWhatsApp } from '@/lib/whatsapp';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -40,23 +41,20 @@ export function ContactForm() {
   });
 
   const onSubmit = async (values: ContactInput) => {
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...values, sourcePath: window.location.pathname }),
-      });
-      const result = (await response.json()) as { message?: string };
+    const inquiryLabel = inquiryTypes.find((type) => type.value === values.inquiryType)?.label ?? values.inquiryType;
 
-      if (!response.ok) {
-        toast.error(result.message ?? 'We could not send that. Try again in a moment.');
-        return;
-      }
-      toast.success('Message sent. A consultant will reply within one business day.');
-      reset();
-    } catch {
-      toast.error('Network problem. Check your connection and try again.');
-    }
+    openWhatsApp(
+      `Hello, I would like to make an enquiry:\n\n` +
+      `Name: ${values.firstName} ${values.lastName}\n` +
+      `Email: ${values.email}\n` +
+      `Phone: ${values.phone || 'Not provided'}\n` +
+      `Company: ${values.company || 'Not provided'}\n` +
+      `Inquiry type: ${inquiryLabel}\n\n` +
+      `Message:\n${values.message}`,
+    );
+
+    toast.success('WhatsApp opened with your message ready to send.');
+    reset();
   };
 
   return (

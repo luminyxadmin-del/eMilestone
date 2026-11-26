@@ -15,7 +15,6 @@ const staticRoutes: {
   { path: '/expertise', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/for-employers', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/for-talent', priority: 0.9, changeFrequency: 'weekly' },
-  { path: '/csr', priority: 0.5, changeFrequency: 'monthly' },
   { path: '/employee-engagement', priority: 0.5, changeFrequency: 'monthly' },
   { path: '/careers', priority: 0.7, changeFrequency: 'weekly' },
   { path: '/jobs', priority: 0.8, changeFrequency: 'daily' },

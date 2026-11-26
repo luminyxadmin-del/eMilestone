@@ -19,7 +19,7 @@ const trail = [
 export const metadata: Metadata = buildMetadata({
   title: 'Contact Us',
   description:
-    'Connect with the eMilestones team to start a confidential conversation about your executive search needs. Offices in Mumbai and Delhi.',
+    'Connect with the eMilestones team to start a confidential conversation about your executive search needs. Office in Mumbai.',
   path: '/contact',
 });
 

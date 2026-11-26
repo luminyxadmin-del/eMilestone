@@ -17,13 +17,17 @@ export function Footer() {
       <div className="mx-auto max-w-[1280px] px-4 py-20 md:px-12 md:py-24">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-block" aria-label={`${site.legalName} — home`}>
+            <Link
+              href="/"
+              className="inline-block rounded-sm bg-white px-3 py-2"
+              aria-label={`${site.legalName} — home`}
+            >
               <Image
                 src={site.logoUrl}
                 alt={site.legalName}
                 width={290}
                 height={99}
-                className="h-11 w-auto"
+                className="h-16 w-auto sm:h-[72px]"
               />
             </Link>
             <p className="mt-6 max-w-sm text-body-md text-white/60">

@@ -24,15 +24,15 @@ export const site = {
     'eMilestones Executive Search, part of Luminyx Ventures, connects world-class leadership with premier organizations across India, the UAE and Africa.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://milestones-executive.com',
   email: 'support@emilestones.net',
-  phone: '7977704144',
-  phoneHref: '+917977704144',
+  phone: '+91 9082680425',
+  phoneHref: '+919082680425',
   founded: '2009',
   social: {
-    linkedin: 'https://www.linkedin.com/company/milestones-executive-search',
+    linkedin: 'https://www.linkedin.com/company/emilestones/',
     x: 'https://x.com/milestonesexec',
   },
   logoUrl:
-    'https://res.cloudinary.com/dtg3lepr4/image/upload/v1783361344/emilestones_logo_p29vbm.png',
+    'https://res.cloudinary.com/dtg3lepr4/image/upload/v1795692769/Emilestones_Final_logo_e7gwq3.png',
   heroBannerUrl:
     'https://res.cloudinary.com/dtg3lepr4/image/upload/v1787885008/Hero_Banner_05_llgoir.png',
 } as const;
@@ -47,7 +47,6 @@ export const navigation: NavGroup[] = [
       { label: 'Who We Are', href: '/who-we-are' },
       { label: 'Why Us', href: '/why-us' },
       { label: 'Our Team', href: '/our-team' },
-      { label: 'CSR Activities', href: '/csr' },
       { label: 'Employee Engagement', href: '/employee-engagement' },
     ],
   },
@@ -80,7 +79,6 @@ export const footerNavigation = [
   {
     title: 'Responsibility',
     links: [
-      { label: 'CSR Activities', href: '/csr' },
       { label: 'Employee Engagement', href: '/employee-engagement' },
       { label: 'Open Roles', href: '/jobs' },
       { label: 'Contact Us', href: '/contact' },
@@ -755,19 +753,8 @@ export const offices: OfficeLocation[] = [
       'Vikhroli Parksite, Near Nagbaba Temple',
       'LBS Marg, Vikhroli (W), Mumbai 400079',
     ],
-    mapUrl:
-      'https://www.google.com/maps/search/?api=1&query=C-13+Kailas+Vaibhav+Complex+Vikhroli+Parksite+LBS+Marg+Vikhroli+West+Mumbai+400079',
+    mapUrl: 'https://maps.app.goo.gl/cK7Jmqr8zKcpCX3P6',
     primary: true,
-    phone: '7977704144',
-    email: 'support@emilestones.net',
-  },
-  {
-    city: 'Delhi',
-    label: 'Delhi Office',
-    address: ['9/905 Kailash Building', '26, KG Marg, Connaught Place', 'Delhi 110001'],
-    mapUrl:
-      'https://www.google.com/maps/search/?api=1&query=9%2F905+Kailash+Building+26+KG+Marg+Connaught+Place+Delhi+110001',
-    primary: false,
     phone: '7977704144',
     email: 'support@emilestones.net',
   },

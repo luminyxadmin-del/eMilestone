@@ -11,6 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Field } from '@/components/ui/field';
 import { ResumeDropzone } from '@/components/forms/ResumeDropzone';
+import { openWhatsApp } from '@/lib/whatsapp';
 
 interface JobApplicationFormProps {
   jobSlug: string;
@@ -57,6 +58,15 @@ export function JobApplicationForm({
       }
       toast.success(
         `Applied to ${jobTitle}. You will hear from us within five business days.`,
+      );
+      openWhatsApp(
+        `Hello, I would like to apply for ${jobTitle}:\n\n` +
+        `Full name: ${values.fullName}\n` +
+        `Email: ${values.email}\n` +
+        `Phone: ${values.phone || 'Not provided'}\n` +
+        `LinkedIn: ${values.linkedinUrl || 'Not provided'}\n` +
+        `Cover note: ${values.coverNote || 'Not provided'}\n` +
+        `Resume uploaded: ${resumePath}`,
       );
       reset({ jobSlug, jobId: jobId ?? '' });
       setResumePath('');

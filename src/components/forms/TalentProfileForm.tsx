@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import { Loader2, Send } from 'lucide-react';
 import { talentProfileSchema, type TalentProfileInput } from '@/lib/validations';
 import { sectors } from '@/content/site';
+import { openWhatsApp } from '@/lib/whatsapp';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -33,6 +34,18 @@ export function TalentProfileForm() {
         return;
       }
       toast.success('Profile received. A consultant will be in touch if there is a fit.');
+      openWhatsApp(
+        `Hello, I would like to join the eMilestones executive network:\n\n` +
+          `Full name: ${values.fullName}\n` +
+          `Email: ${values.email}\n` +
+          `Phone: ${values.phone || 'Not provided'}\n` +
+          `Current title: ${values.currentTitle || 'Not provided'}\n` +
+          `Current company: ${values.currentCompany || 'Not provided'}\n` +
+          `Sector: ${values.sector || 'Not provided'}\n` +
+          `Years of experience: ${values.yearsExperience || 'Not provided'}\n` +
+          `LinkedIn: ${values.linkedinUrl || 'Not provided'}\n` +
+          `Notes: ${values.notes || 'Not provided'}`,
+      );
       reset();
     } catch {
       toast.error('Network problem. Check your connection and try again.');
