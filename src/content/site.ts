@@ -33,6 +33,8 @@ export const site = {
   },
   logoUrl:
     'https://res.cloudinary.com/dtg3lepr4/image/upload/v1795692769/Emilestones_Final_logo_e7gwq3.png',
+  logoOnDarkUrl:
+    'https://res.cloudinary.com/dtg3lepr4/image/upload/v1795796326/Emilestones_Final_logo-_white_yq0a25.png',
   heroBannerUrl:
     'https://res.cloudinary.com/dtg3lepr4/image/upload/v1787885008/Hero_Banner_05_llgoir.png',
 } as const;

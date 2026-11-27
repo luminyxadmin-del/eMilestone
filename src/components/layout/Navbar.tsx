@@ -98,7 +98,7 @@ export function Navbar() {
         >
           <Link href="/" className="shrink-0" aria-label={`${site.legalName} — home`}>
             <Image
-              src={site.logoUrl}
+              src={lightBar ? site.logoUrl : site.logoOnDarkUrl}
               alt={site.legalName}
               width={290}
               height={99}

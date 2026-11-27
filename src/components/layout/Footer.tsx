@@ -19,11 +19,11 @@ export function Footer() {
           <div className="lg:col-span-5">
             <Link
               href="/"
-              className="inline-block rounded-sm bg-white px-3 py-2"
+              className="inline-block"
               aria-label={`${site.legalName} — home`}
             >
               <Image
-                src={site.logoUrl}
+                src={site.logoOnDarkUrl}
                 alt={site.legalName}
                 width={290}
                 height={99}
