@@ -575,7 +575,7 @@ export const team: TeamMember[] = [
   {
     slug: 'ruhi-dongaonkar',
     name: 'Ruhi Dongaonkar',
-    role: 'Strategic Operations Lead',
+    role: 'Director - Growth & Operations',
     bio: 'Ruhi Dongaonkar is a strategic operations leader with experience in recruitment, client management, talent delivery and business operations. She works closely with clients and internal teams to understand talent requirements, strengthen recruitment processes and ensure a seamless experience throughout the hiring journey. At eMilestones, Ruhi focuses on building strong delivery capabilities and creating efficient, people-centric processes that help organisations find and retain the right talent.',
     initials: 'RD',
     focus: 'Talent Operations',
@@ -585,7 +585,7 @@ export const team: TeamMember[] = [
   {
     slug: 'moksh-galhotra',
     name: 'Moksh Galhotra',
-    role: 'Business Development & Partnerships',
+    role: 'Director - Growth & Partnership',
     bio: 'Moksh Galhotra is a business development and partnerships professional focused on recruitment, executive search and building long-term client relationships. He works closely with organisations to understand their talent needs, identify new opportunities and develop partnerships that create meaningful value for clients and candidates. At eMilestones, Moksh is focused on expanding the company’s network, building strategic partnerships and connecting organisations with the talent they need to grow.',
     initials: 'MG',
     focus: 'Partnerships',
